@@ -12,7 +12,7 @@ MYOPTIONS=""
 
 DEPENDENCIES="
     build+run:
-        media-libs/imlib2 X
+        media-libs/imlib2[X]
         x11-server/xorg-server
 "
 
