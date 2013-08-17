@@ -20,6 +20,7 @@ DEPENDENCIES="
 "
 
 src_install() {
+    insinto /usr/share/fonts/X11/${PN}/
     doins "${WORK}"/*.ttf
 
     if has_version 'media-libs/fontconfig[>=2.10.1]' ; then
