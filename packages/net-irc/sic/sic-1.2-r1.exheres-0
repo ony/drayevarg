@@ -1,0 +1,22 @@
+# Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="A Simple IRC Client (less than 250 lines of code)"
+HOMEPAGE="http://tools.suckless.org/sic"
+DOWNLOADS="http://dl.suckless.org/tools/${PNV}.tar.gz"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        sys-libs/ncurses
+"
+
+DEFAULT_SRC_INSTALL_PARAMS=( "PREFIX=/usr" )
+
+src_compile() {
+    default
+}

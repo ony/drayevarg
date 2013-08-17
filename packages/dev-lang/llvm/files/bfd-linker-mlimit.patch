@@ -1,0 +1,34 @@
+diff -Naru llvm-3.2.src/test/BugPoint/crash-narrowfunctiontest.ll llvm-3.2.src/test/BugPoint.new/crash-narrowfunctiontest.ll
+--- llvm-3.2.src/test/BugPoint/crash-narrowfunctiontest.ll	2012-10-25 19:19:02.000000000 -0700
++++ llvm-3.2.src/test/BugPoint.new/crash-narrowfunctiontest.ll	2013-08-13 04:46:44.734752866 -0700
+@@ -1,6 +1,6 @@
+ ; Test that bugpoint can narrow down the testcase to the important function
+ ;
+-; RUN: bugpoint -load %llvmshlibdir/BugpointPasses%shlibext %s -output-prefix %t -bugpoint-crashcalls -silence-passes > /dev/null
++; RUN: bugpoint -load %llvmshlibdir/BugpointPasses%shlibext %s -output-prefix %t -bugpoint-crashcalls -silence-passes -mlimit=0 > /dev/null
+ ; REQUIRES: loadable_module
+ ; XFAIL: lto_on_osx
+ 
+diff -Naru llvm-3.2.src/test/BugPoint/lit.local.cfg llvm-3.2.src/test/BugPoint.new/lit.local.cfg
+--- llvm-3.2.src/test/BugPoint/lit.local.cfg	2012-02-15 22:28:33.000000000 -0800
++++ llvm-3.2.src/test/BugPoint.new/lit.local.cfg	1969-12-31 16:00:00.000000000 -0800
+@@ -1 +0,0 @@
+-config.suffixes = ['.ll', '.c', '.cpp']
+diff -Naru llvm-3.2.src/test/BugPoint/metadata.ll llvm-3.2.src/test/BugPoint.new/metadata.ll
+--- llvm-3.2.src/test/BugPoint/metadata.ll	2012-10-25 19:19:02.000000000 -0700
++++ llvm-3.2.src/test/BugPoint.new/metadata.ll	2013-08-13 04:46:57.458880491 -0700
+@@ -1,4 +1,4 @@
+-; RUN: bugpoint -load %llvmshlibdir/BugpointPasses%shlibext %s -output-prefix %t -bugpoint-crashcalls -silence-passes > /dev/null
++; RUN: bugpoint -load %llvmshlibdir/BugpointPasses%shlibext %s -output-prefix %t -bugpoint-crashcalls -silence-passes -mlimit=0 > /dev/null
+ ; RUN: llvm-dis %t-reduced-simplified.bc -o - | FileCheck %s
+ ; REQUIRES: loadable_module
+ ; XFAIL: lto_on_osx
+diff -Naru llvm-3.2.src/test/BugPoint/remove_arguments_test.ll llvm-3.2.src/test/BugPoint.new/remove_arguments_test.ll
+--- llvm-3.2.src/test/BugPoint/remove_arguments_test.ll	2012-10-25 19:19:02.000000000 -0700
++++ llvm-3.2.src/test/BugPoint.new/remove_arguments_test.ll	2013-08-13 04:47:13.295039357 -0700
+@@ -1,4 +1,4 @@
+-; RUN: bugpoint -load %llvmshlibdir/BugpointPasses%shlibext %s -output-prefix %t -bugpoint-crashcalls -silence-passes
++; RUN: bugpoint -load %llvmshlibdir/BugpointPasses%shlibext %s -output-prefix %t -bugpoint-crashcalls -silence-passes -mlimit=0
+ ; RUN: llvm-dis %t-reduced-simplified.bc -o - | FileCheck %s
+ ; REQUIRES: loadable_module
+ ; XFAIL: lto_on_osx

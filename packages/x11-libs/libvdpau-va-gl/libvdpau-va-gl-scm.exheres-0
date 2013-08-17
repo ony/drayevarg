@@ -1,0 +1,29 @@
+# Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user="i-rinat" ]
+
+SUMMARY="VDPAU driver with OpenGL/VAAPI backend"
+HOMEPAGE="http://github.com/i-rinat/libvdpau-va-gl"
+DOWNLOADS=""
+
+LICENCES="LGPL-3"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        sys-devel/cmake
+    build+run:
+        x11-dri/mesa
+        x11-libs/libva
+        x11-libs/libvdpau
+"
+    src_compile() {
+        cmake . -DCMAKE_INSTALL_PREFIX=/usr -DLIB_INSTALL_DIR="/usr/$LIBDIR"
+}
+
+pkg_postinst() {
+    einfo "You can use this library with the VDPAU_DRIVER=va_gl environment variable."
+}

@@ -1,0 +1,17 @@
+# Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="A tool to convert GIF images (or even whole web hierarchies) to PNG format"
+HOMEPAGE="http://www.catb.org/~esr/gif2png"
+DOWNLOADS="http://www.catb.org/~esr/gif2png/${PNV}.tar.gz"
+
+LICENCES="ZLIB"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-lang/python
+        media-libs/libpng
+"

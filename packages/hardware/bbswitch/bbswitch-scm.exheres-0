@@ -1,0 +1,31 @@
+# Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user="Bumblebee-Project" ]
+
+SUMMARY="A kernel module to toggle the discrete graphics card on hybrid laptops, such as nVidia Optimus"
+HOMEPAGE="http://github.com/Bumblebee-Project/bbswitch"
+DOWNLOADS=""
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    suggestion:
+        x11-dri/bumblebee [[
+            description = [ automate the toggle process ]
+            ]]
+"
+
+src_compile() {
+    ewarn "You need to run 'make' in '/usr/src/bbswitch' yourself."
+}
+
+src_install() {
+    insinto /usr/src/${PN}
+    doins ${WORK}/*
+
+    ewarn "You need to run 'make install' in '/usr/src/bbswitch' yourself."
+}
