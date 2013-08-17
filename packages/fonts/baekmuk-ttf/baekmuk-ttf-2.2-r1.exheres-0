@@ -1,7 +1,7 @@
 # Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-SUMMARY="Korean truetype fonts"
+SUMMARY="Korean TrueType fonts"
 HOMEPAGE="http://kldp.net/projects/baekmuk"
 DOWNLOADS="http://kldp.net/frs/download.php/1429/${PNV}.tar.gz"
 
@@ -11,13 +11,19 @@ PLATFORMS="~amd64 ~x86"
 MYOPTIONS=""
 
 DEPENDENCIES="
-    build+run:
+    run:    
+        fonts/encodings
         media-libs/fontconfig
+        x11-apps/mkfontdir
+        x11-apps/mkfontscale
 "
-
 src_install() {
-    default
-
     insinto /usr/share/fonts/X11/${PN}/
-    doins "${WORK}"/ttf/*.ttf
+    doins ${WORK}/ttf/*.ttf
+
+    # Install docs and let us generate our own fonts.{dir,scale}
+    default 
+    nonfatal edo rm -f ${WORK}/ttf/fonts.{scale,dir}
+
+    einfo "Upstream does not provide fontconfig .conf files."
 }

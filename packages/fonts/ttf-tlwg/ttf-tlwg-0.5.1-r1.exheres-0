@@ -1,7 +1,7 @@
 # Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-SUMMARY="Thai truetype fonts"
+SUMMARY="Thai TrueType fonts"
 HOMEPAGE="http://linux.thai.net"
 DOWNLOADS="ftp://linux.thai.net/pub/thailinux/software/thai-ttf/${PNV}.tar.xz"
 
@@ -13,12 +13,20 @@ MYOPTIONS=""
 DEPENDENCIES="
     build+run:
         media-libs/fontconfig
+    run:
+        fonts/encodings
+        x11-apps/mkfontdir
+        x11-apps/mkfontscale
 "
 
 src_install() {
-    # We don't want the installation instructions
-    #default
-
-    insinto /usr/share/fonts/X11/${PN}/
     doins "${WORK}"/*.ttf
+
+    if has_version 'media-libs/fontconfig[>=2.10.1]' ; then
+        insinto /usr/share/fontconfig/conf.avail/
+    else
+        insinto /etc/fonts/conf.avail/
+    fi
+
+    doins ${WORK}/etc/fonts/conf.avail/*
 }
