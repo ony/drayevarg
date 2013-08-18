@@ -1,9 +1,11 @@
 # Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
+# Last checked 17 Aug 2013
+
 require github [ user="i-rinat" ]
 
-SUMMARY="VDPAU driver with OpenGL/VAAPI backend"
+SUMMARY="VDPAU driver with OpenGL/VA-API backend"
 HOMEPAGE="http://github.com/i-rinat/libvdpau-va-gl"
 DOWNLOADS=""
 
@@ -20,8 +22,24 @@ DEPENDENCIES="
         x11-libs/libva
         x11-libs/libvdpau
 "
-    src_compile() {
-        cmake . -DCMAKE_INSTALL_PREFIX=/usr -DLIB_INSTALL_DIR="/usr/$LIBDIR"
+src_compile() {
+    cmake . -DCMAKE_INSTALL_PREFIX=/usr -DLIB_INSTALL_DIR="/usr/${LIBDIR}"
+}
+
+src_install() {
+    default
+}
+
+src_test() {
+    emake build-tests
+    # TODO - please send patches
+    #esandbox disable
+    #esandbox disable_exec
+    #esandbox disable_net
+    #emake -j1 test
+    #esandbox enable
+    #esandbox enable_exec
+    #esandbox enable_net
 }
 
 pkg_postinst() {
