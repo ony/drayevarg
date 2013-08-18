@@ -16,7 +16,6 @@ DEPENDENCIES="
     run:
         fonts/encodings
         x11-apps/mkfontdir
-        x11-apps/mkfontscale
 "
 
 src_install() {

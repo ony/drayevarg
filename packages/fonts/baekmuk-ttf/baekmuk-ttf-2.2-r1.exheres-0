@@ -11,11 +11,11 @@ PLATFORMS="~amd64 ~x86"
 MYOPTIONS=""
 
 DEPENDENCIES="
+    build+run:
+        media-libs/fontconfig
     run:    
         fonts/encodings
-        media-libs/fontconfig
         x11-apps/mkfontdir
-        x11-apps/mkfontscale
 "
 src_install() {
     insinto /usr/share/fonts/X11/${PN}/
