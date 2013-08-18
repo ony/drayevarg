@@ -1,6 +1,8 @@
 # Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
+# Last checked 17 Aug 2013
+
 require github [ user="Bumblebee-Project" ]
 
 SUMMARY="A kernel module to toggle the discrete graphics card on hybrid laptops, such as nVidia Optimus"
