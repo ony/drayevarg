@@ -18,6 +18,8 @@ DEPENDENCIES="
     build:
         sys-devel/cmake
     build+run:
+        media/ffmpeg[va]
+        media/ffmpeg[vdpau]
         x11-dri/mesa
         x11-libs/libva
         x11-libs/libvdpau
