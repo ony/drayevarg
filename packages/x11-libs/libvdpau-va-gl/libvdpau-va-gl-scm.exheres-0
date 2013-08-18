@@ -28,10 +28,6 @@ src_compile() {
     cmake . -DCMAKE_INSTALL_PREFIX=/usr -DLIB_INSTALL_DIR="/usr/${LIBDIR}"
 }
 
-src_install() {
-    default
-}
-
 src_test() {
     emake build-tests
     # TODO - please send patches
