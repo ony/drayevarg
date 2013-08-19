@@ -22,12 +22,15 @@ DEPENDENCIES="
 "
 
 src_compile() {
-    ewarn "You need to run 'make' in '/usr/src/bbswitch' yourself."
+    :
 }
 
 src_install() {
     insinto /usr/src/${PN}
     doins ${WORK}/*
-
-    ewarn "You need to run 'make install' in '/usr/src/bbswitch' yourself."
 }
+
+pkg_postinst() {
+    ewarn "You need to run 'make' and 'make install' in '/usr/src/bbswitch' yourself."
+}
+
