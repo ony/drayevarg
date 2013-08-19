@@ -9,7 +9,7 @@ SUMMARY="Thai TrueType fonts"
 HOMEPAGE="http://linux.thai.net"
 DOWNLOADS="ftp://linux.thai.net/pub/thailinux/software/thai-ttf/${PNV}.tar.xz"
 
-LICENCES="GPL-2+"
+LICENCES="GPL-2 GPL-3"
 SLOT="0"
 PLATFORMS="~amd64 ~x86"
 MYOPTIONS=""
