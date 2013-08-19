@@ -1,7 +1,9 @@
 # Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-# Last checked 17 Aug 2013
+require cmake
+
+# Last checked 18 Aug 2013
 
 require github [ user="i-rinat" ]
 
@@ -23,22 +25,13 @@ DEPENDENCIES="
         x11-libs/libva
         x11-libs/libvdpau
 "
-src_compile() {
-    cmake . -DCMAKE_INSTALL_PREFIX=/usr -DLIB_INSTALL_DIR="/usr/${LIBDIR}"
-}
 
 src_test() {
-    emake build-tests
-    # TODO - please send patches
-    #esandbox disable
-    #esandbox disable_exec
-    #esandbox disable_net
-    #emake -j1 test
-    #esandbox enable
-    #esandbox enable_exec
-    #esandbox enable_net
+    # TODO - seems to be broken pre-install
+    :   
 }
 
 pkg_postinst() {
     einfo "You can use this library with the VDPAU_DRIVER=va_gl environment variable."
 }
+
