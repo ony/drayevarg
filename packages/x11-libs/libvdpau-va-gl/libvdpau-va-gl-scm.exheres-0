@@ -28,6 +28,6 @@ src_test() {
 }
 
 pkg_postinst() {
-    einfo "You can use this library with the VDPAU_DRIVER=va_gl environment variable."
+    elog "You can use this library with the VDPAU_DRIVER=va_gl environment variable."
 }
 

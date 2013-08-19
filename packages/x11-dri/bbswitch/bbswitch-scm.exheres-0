@@ -31,6 +31,6 @@ src_install() {
 }
 
 pkg_postinst() {
-    ewarn "You need to run 'make' and 'make install' in '/usr/src/bbswitch' yourself."
+    elog "You need to run 'make' and 'make install' in '/usr/src/bbswitch' yourself."
 }
 
