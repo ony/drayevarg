@@ -1,11 +1,9 @@
 # Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require cmake
+require cmake github [ user="i-rinat" ]
 
 # Last checked 18 Aug 2013
-
-require github [ user="i-rinat" ]
 
 SUMMARY="VDPAU driver with OpenGL/VA-API backend"
 HOMEPAGE="http://github.com/i-rinat/libvdpau-va-gl"
@@ -19,7 +17,7 @@ MYOPTIONS=""
 DEPENDENCIES="
     build+run:
         media/ffmpeg[va][vdpau]
-        x11-dri/mesa
+        x11-dri/mesa[X]
         x11-libs/libva
         x11-libs/libvdpau
 "
