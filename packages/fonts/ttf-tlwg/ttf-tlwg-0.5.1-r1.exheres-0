@@ -9,7 +9,7 @@ SUMMARY="Thai TrueType fonts"
 HOMEPAGE="http://linux.thai.net"
 DOWNLOADS="ftp://linux.thai.net/pub/thailinux/software/thai-ttf/${PNV}.tar.xz"
 
-LICENCES="Bitstream Vera GPL-2"
+LICENCES="Bitstream-Vera GPL-2"
 SLOT="0"
 PLATFORMS="~amd64 ~x86"
 MYOPTIONS=""
