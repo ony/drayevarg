@@ -5,7 +5,7 @@ SUMMARY="A tool to set X background or color"
 HOMEPAGE="http://thegraveyard.org/hsetroot.html"
 DOWNLOADS="http://thegraveyard.org/files/${PNV}.tar.gz"
 
-LICENCES="GPL"
+LICENCES="GPL-2 GPL-3"
 SLOT="0"
 PLATFORMS="~amd64 ~x86"
 MYOPTIONS=""
@@ -17,3 +17,4 @@ DEPENDENCIES="
 "
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( --hates=docdir )
+
