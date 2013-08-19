@@ -12,6 +12,7 @@ MYOPTIONS=""
 
 DEPENDENCIES="
     build+run:
-        dev-lang/python
+        dev-lang/python:*[<3]
         media-libs/libpng
 "
+
