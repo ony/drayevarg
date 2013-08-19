@@ -16,14 +16,10 @@ DEPENDENCIES=""
 
 src_install() {
     insinto /usr/share/fonts/X11/${PN}/
-    doins ${WORK}/ttf/*.ttf
+    doins "${WORK}"/ttf/*.ttf
 
     emagicdocs
 
     fix_fonts
-}
-
-pkg_postinst() {
-    einfo "Upstream does not provide fontconfig .conf files."
 }
 
