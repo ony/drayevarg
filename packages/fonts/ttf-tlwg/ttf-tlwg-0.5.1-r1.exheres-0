@@ -1,22 +1,20 @@
 # Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
+require xfont
+
+FONT="ttf-tlwg"
+
 SUMMARY="Thai TrueType fonts"
 HOMEPAGE="http://linux.thai.net"
 DOWNLOADS="ftp://linux.thai.net/pub/thailinux/software/thai-ttf/${PNV}.tar.xz"
 
-LICENCES="GPL"
+LICENCES="GPL-2+"
 SLOT="0"
 PLATFORMS="~amd64 ~x86"
 MYOPTIONS=""
 
-DEPENDENCIES="
-    build+run:
-        media-libs/fontconfig
-    run:
-        fonts/encodings
-        x11-apps/mkfontdir
-"
+DEPENDENCIES=""
 
 src_install() {
     insinto /usr/share/fonts/X11/${PN}/
@@ -29,4 +27,7 @@ src_install() {
     fi
 
     doins ${WORK}/etc/fonts/conf.avail/*
+
+    fix_fonts
 }
+
