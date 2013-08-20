@@ -1,0 +1,21 @@
+# Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="A minimal floating window manager for X"
+HOMEPAGE="http://www.6809.org.uk/evilwm"
+DOWNLOADS="http://www.6809.org.uk/evilwm/${PNV}.tar.gz"
+
+LICENCES="GPL-1"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        x11-libs/libXrandr
+"
+
+src_prepare() {
+    edo sed 's/$(INSTALL_STRIP)//g' -i Makefile
+}
+
