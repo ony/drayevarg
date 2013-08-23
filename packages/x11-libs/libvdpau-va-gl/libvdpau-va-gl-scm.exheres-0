@@ -24,7 +24,7 @@ DEPENDENCIES="
 
 src_test() {
     # TODO - seems to be broken pre-install
-    :   
+    :
 }
 
 pkg_postinst() {
