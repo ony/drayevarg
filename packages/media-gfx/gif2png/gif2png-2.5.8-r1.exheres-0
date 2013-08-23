@@ -3,7 +3,7 @@
 
 SUMMARY="A tool to convert GIF images (or even whole web hierarchies) to PNG format"
 HOMEPAGE="http://www.catb.org/~esr/gif2png"
-DOWNLOADS="http://www.catb.org/~esr/gif2png/${PNV}.tar.gz"
+DOWNLOADS="http://www.catb.org/~esr/${PN}/${PNV}.tar.gz"
 
 LICENCES="ZLIB"
 SLOT="0"
