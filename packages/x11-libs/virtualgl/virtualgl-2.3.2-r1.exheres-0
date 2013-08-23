@@ -1,0 +1,60 @@
+# Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+# Which is based upon the exheres:
+# Copyright 2011 Dimitry Ishenko <dimitry.ishenko@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+# Which is inspired by the virtualgl-2.2.1.ebuild:
+# Copyright 1999-2010 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+MPN="VirtualGL"
+WORK="${WORKBASE}"/${MPN}-${PV}
+
+require cmake [ api=2 ] easy-multibuild sourceforge [ suffix=tar.gz ]
+
+SUMMARY="Offload OpenGL(X) calls to a virtual X server with full hardware acceleration"
+HOMEPAGE="http://virtualgl.org"
+DOWNLOADS="http://downloads.sourceforge.net/project/${PN}/${MPN}/${PV}/${MPN}-${PV}.tar.gz"
+
+LICENCES="LGPL-2.1"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS="multibuild_c: 32 64"
+
+DEPENDENCIES="
+    build+run:
+        media-libs/libjpeg-turbo
+        x11-dri/glu
+        x11-libs/libXext
+        x11-libs/libXv
+"
+
+configure_one_multibuild() {
+    local args=( 
+        -DCMAKE_INSTALL_PREFIX=/usr \ 
+	-DOPENGL_gl_LIBRARY=/usr/${LIBDIR}/libGL.so.1 \
+        -DTJPEG_INCLUDE_DIR=/opt/libjpeg-turbo/include \ 
+        -DTJPEG_LIBRARY=/opt/libjpeg-turbo/${LIBDIR}/libturbojpeg.so \ 
+        -DVGL_BINDIR=/usr/bin \ 
+        -DVGL_DOCDIR=/usr/share/doc/${PNV} \ 
+        -DVGL_FAKELIBDIR:PATH=/usr/${LIBDIR}/virtualgl \ 
+        -DVGL_LIBDIR=/usr/${LIBDIR} 
+    )
+
+    ecmake "${args[@]}"
+}
+
+src_compile() {
+    easy-multibuild_run_phase
+}
+
+install_one_multibuild() {
+    cmake_src_install
+}
+
+src_install() {
+    easy-multibuild_src_install
+
+    # Collides with x11-dri/mesa-demos
+    edo mv "${IMAGE}"/usr/bin/glxinfo "${IMAGE}"/usr/bin/vglxinfo
+}
