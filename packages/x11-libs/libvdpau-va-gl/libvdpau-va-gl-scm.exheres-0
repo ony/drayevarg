@@ -3,7 +3,7 @@
 
 require cmake github [ user="i-rinat" ]
 
-# Last checked 18 Aug 2013
+# Last checked 24 Aug 2013
 
 SUMMARY="VDPAU driver with OpenGL/VA-API backend"
 HOMEPAGE="http://github.com/i-rinat/libvdpau-va-gl"
