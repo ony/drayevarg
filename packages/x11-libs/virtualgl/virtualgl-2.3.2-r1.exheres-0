@@ -65,5 +65,10 @@ src_install() {
     # Collides with x11-dri/mesa-demos and complicates multibuild
     edo rm "${IMAGE}"/usr/bin/glxinfo
     edo rm "${IMAGE}"/usr/bin/glxspheres
+
+    # vglrun needs to find libturbojpeg.so
+    hereenvd 60virtualgl <<EOF
+LDPATH="/opt/libjpeg-turbo/${LIBDIR}/"
+EOF
 }
 
