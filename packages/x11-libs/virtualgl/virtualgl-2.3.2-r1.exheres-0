@@ -63,8 +63,13 @@ src_install() {
     edo rm "${IMAGE}"/usr/bin/glxspheres
 
     # vglrun needs to find libturbojpeg.so
+    if option multibuild_c:32 ; then
     hereenvd 60virtualgl <<EOF
-LDPATH="/opt/libjpeg-turbo/${LIBDIR}"
+LDPATH="/opt/libjpeg-turbo/lib64:/opt/libjpeg-turbo/lib32"
 EOF
+    else hereenvd 60virtualgl <<EOF
+LDPATH="/opt/libjpeg-turbo/lib64"
+EOF
+    fi
 }
 
