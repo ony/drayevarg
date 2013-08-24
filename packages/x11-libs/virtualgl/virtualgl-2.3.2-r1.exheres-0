@@ -13,7 +13,7 @@ WORK="${WORKBASE}"/${MPN}-${PV}
 require cmake [ api=2 ] easy-multibuild sourceforge [ pn="${MPN}" project="${PN}" suffix=tar.gz ]
 
 SUMMARY="Offload OpenGL(X) calls to a virtual X server with full hardware acceleration"
-HOMEPAGE="http://virtualgl.org"
+HOMEPAGE="http://${PN}.org"
 
 LICENCES="LGPL-2.1"
 SLOT="0"
@@ -49,10 +49,6 @@ configure_one_multibuild() {
         -DVGL_LIBDIR=/usr/${LIBDIR} )
 
     ecmake "${args[@]}"
-}
-
-src_compile() {
-    easy-multibuild_run_phase
 }
 
 install_one_multibuild() {
