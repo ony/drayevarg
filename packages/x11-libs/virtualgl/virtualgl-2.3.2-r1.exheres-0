@@ -68,7 +68,7 @@ src_install() {
 
     # vglrun needs to find libturbojpeg.so
     hereenvd 60virtualgl <<EOF
-LDPATH="/opt/libjpeg-turbo/${LIBDIR}/"
+LDPATH="/opt/libjpeg-turbo/${LIBDIR}"
 EOF
 }
 
