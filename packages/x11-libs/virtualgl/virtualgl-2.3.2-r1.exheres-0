@@ -34,18 +34,18 @@ DEPENDENCIES="
 
 configure_one_multibuild() {
     if option openssl ; then
-        local args=( -DVGL_USESSL=1 \ )
-            else local args=( -DVGL_USESSL=0 \ )
+        local args=( -DVGL_USESSL=1 )
+            else local args=( -DVGL_USESSL=0 )
     fi
     
     args+=( 
-        -DCMAKE_INSTALL_PREFIX=/usr \ 
-        -DOPENGL_gl_LIBRARY=/usr/${LIBDIR}/libGL.so.1 \ 
-        -DTJPEG_INCLUDE_DIR=/opt/libjpeg-turbo/include \ 
-        -DTJPEG_LIBRARY=/opt/libjpeg-turbo/${LIBDIR}/libturbojpeg.so \ 
-        -DVGL_BINDIR=/usr/bin \ 
-        -DVGL_DOCDIR=/usr/share/doc/${PNV} \ 
-        -DVGL_FAKELIBDIR:PATH=/usr/${LIBDIR}/virtualgl \ 
+        -DCMAKE_INSTALL_PREFIX=/usr 
+        -DOPENGL_gl_LIBRARY=/usr/${LIBDIR}/libGL.so.1 
+        -DTJPEG_INCLUDE_DIR=/opt/libjpeg-turbo/include 
+        -DTJPEG_LIBRARY=/opt/libjpeg-turbo/${LIBDIR}/libturbojpeg.so 
+        -DVGL_BINDIR=/usr/bin 
+        -DVGL_DOCDIR=/usr/share/doc/${PNV} 
+        -DVGL_FAKELIBDIR:PATH=/usr/${LIBDIR}/virtualgl 
         -DVGL_LIBDIR=/usr/${LIBDIR} )
 
     ecmake "${args[@]}"
@@ -62,7 +62,8 @@ install_one_multibuild() {
 src_install() {
     easy-multibuild_src_install
 
-    # Collides with x11-dri/mesa-demos
-    edo mv "${IMAGE}"/usr/bin/glxinfo "${IMAGE}"/usr/bin/vglxinfo
+    # Collides with x11-dri/mesa-demos and complicates multibuild
+    edo rm "${IMAGE}"/usr/bin/glxinfo
+    edo rm "${IMAGE}"/usr/bin/glxspheres
 }
 
