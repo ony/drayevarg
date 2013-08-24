@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 SUMMARY="A Simple (or suckless) IRC Client in less than 250 lines of code"
-HOMEPAGE="http://tools.suckless.org/sic"
+HOMEPAGE="http://tools.suckless.org/${PN}"
 DOWNLOADS="http://dl.suckless.org/tools/${PNV}.tar.gz"
 
 LICENCES="MIT"
