@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 SUMMARY="A tool to convert GIF images (or even whole web hierarchies) to PNG format"
-HOMEPAGE="http://www.catb.org/~esr/${PN}"
+HOMEPAGE="http://www.catb.org/~esr/gif2png"
 DOWNLOADS="${HOMEPAGE}/${PNV}.tar.gz"
 
 LICENCES="ZLIB"
