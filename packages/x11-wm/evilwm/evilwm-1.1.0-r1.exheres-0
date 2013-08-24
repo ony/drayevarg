@@ -4,8 +4,8 @@
 require freedesktop-desktop
 
 SUMMARY="A minimal floating window manager for X"
-HOMEPAGE="http://www.6809.org.uk/${PN}"
-DOWNLOADS="{HOMEPAGE}/${PNV}.tar.gz"
+HOMEPAGE="http://www.6809.org.uk/${PN}/"
+DOWNLOADS="${HOMEPAGE}/${PNV}.tar.gz"
 
 LICENCES="AEWM"
 SLOT="0"
