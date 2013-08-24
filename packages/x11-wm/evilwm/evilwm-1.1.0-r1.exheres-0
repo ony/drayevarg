@@ -21,7 +21,3 @@ src_prepare() {
     edo sed 's/$(INSTALL_STRIP)//g' -i Makefile
 }
 
-pkg_postinst() {
-    freedesktop-desktop_pkg_postinst
-}
-
