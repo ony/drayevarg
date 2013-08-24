@@ -6,7 +6,7 @@
 require github [ user="Bumblebee-Project" ]
 
 SUMMARY="A kernel module to toggle the discrete graphics card on hybrid laptops, such as nVidia Optimus"
-HOMEPAGE="http://github.com/Bumblebee-Project/bbswitch"
+HOMEPAGE="http://github.com/Bumblebee-Project/${PN}"
 DOWNLOADS=""
 
 LICENCES="GPL-3"
