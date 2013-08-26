@@ -66,5 +66,8 @@ src_install() {
     hereenvd 60virtualgl <<EOF
 LDPATH="/opt/libjpeg-turbo/lib64:/opt/libjpeg-turbo/lib32"
 EOF
+
+    # multibuild_c: 32 creates an extra DOCDIR
+    nonfatal edo rm -fr "${IMAGE}"/usr/share/doc/${PNVR}
 }
 
