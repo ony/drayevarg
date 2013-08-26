@@ -1,0 +1,16 @@
+# Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="A minimalist FIFO and filesystem-based IRC client, the big brother of sic"
+HOMEPAGE="http://tools.suckless.org/ii"
+DOWNLOADS="http://dl.suckless.org/tools/${PNV}.tar.gz"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS=""
+
+DEPENDENCIES=""
+
+DEFAULT_SRC_INSTALL_PARAMS=( PREFIX=/usr DOCDIR=/usr/share/doc/${PNV} )
+
