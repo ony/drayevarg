@@ -38,7 +38,7 @@ configure_one_multibuild() {
             else local args=( -DVGL_USESSL=0 )
     fi
     
-    args+=( 
+    args+=(
         -DCMAKE_INSTALL_PREFIX=/usr
         -DOPENGL_gl_LIBRARY=/usr/${LIBDIR}/libGL.so.1
         -DTJPEG_INCLUDE_DIR=/opt/libjpeg-turbo/include
