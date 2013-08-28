@@ -1,0 +1,36 @@
+# Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="Broadcom's proprietary module wireless cards, patched for mainline"
+HOMEPAGE="http://www.broadcom.com/support/802.11/linux_sta.php"
+DOWNLOADS="http://www.broadcom.com/docs/linux_sta/hybrid-portsrc_${ARCH}_v5_100_82_112.tar.gz"
+
+LICENCES="Broadcom"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    suggestion:
+        net-wireless/b43-fwcutter [[ [ description = "some cards need firmware" ] ]]
+"
+
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/linux-recent.patch" "${FILES}/license.patch" )
+
+src_compile() {
+    :
+}
+
+src_install() {
+    insinto /usr/src/${PN}
+    doins ${WORK}/*
+
+    emagicdocs
+}
+
+pkg_postinst() {
+    elog "You need LIB80211 support in the kernel as well as CFG80211 or WEXT."
+    elog "CFG80211 is preferable to WEXT. Build the module yourself."
+    elog "Prefix make with your desired API, eg. 'API=CFG80211 make'."
+}
+
