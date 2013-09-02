@@ -1,0 +1,30 @@
+# Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require cmake github [ user="envytools" ]
+
+# Last checked 02 Sep 2013
+
+SUMMARY="Debugging tools for nVidia/Nouveau"
+HOMEPAGE="http://github.com/envytools/envytools"
+DOWNLOADS=""
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-libs/libxml2
+        sys-devel/flex
+        virtual/pkg-config
+        x11-libs/libvdpau
+"
+
+src_prepare() {
+    edo sed 's/doc\/envytools/doc\/envytools-scm/' -i CMakeLists.txt
+    edo sed 's/doc\/envytools/doc\/envytools-scm/' -i envydis/CMakeLists.txt
+    edo sed 's/doc\/envytools/doc\/envytools-scm/' -i nva/CMakeLists.txt
+}
+
