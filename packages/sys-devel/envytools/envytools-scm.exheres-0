@@ -19,6 +19,7 @@ DEPENDENCIES="
         dev-libs/libxml2
         sys-devel/flex
         virtual/pkg-config
+        x11-libs/libpciaccess
         x11-libs/libvdpau
 "
 
