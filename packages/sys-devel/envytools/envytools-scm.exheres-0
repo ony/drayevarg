@@ -24,6 +24,7 @@ DEPENDENCIES="
 "
 
 src_prepare() {
+    # -DDOC_PATH seems to be partially ignored in the install phase
     edo sed 's/doc\/envytools/doc\/envytools-scm/' -i CMakeLists.txt
     edo sed 's/doc\/envytools/doc\/envytools-scm/' -i envydis/CMakeLists.txt
     edo sed 's/doc\/envytools/doc\/envytools-scm/' -i nva/CMakeLists.txt
