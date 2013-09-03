@@ -9,7 +9,7 @@ SUMMARY="Debugging tools for nVidia/Nouveau"
 HOMEPAGE="http://github.com/envytools/envytools"
 DOWNLOADS=""
 
-LICENCES="MIT"
+LICENCES="as-is MIT"
 SLOT="0"
 PLATFORMS="~amd64 ~x86"
 MYOPTIONS=""
