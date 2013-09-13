@@ -1,0 +1,43 @@
+# Copyright 2013 Tod Jackson
+# Distributed under the terms of the GNU General Public License v2
+# Which is based upon the exheres:
+# Copyright 2012 William Orr <will@worrbase.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require xorg
+
+SUMMARY="A small dynamic tiling window manager for X"
+HOMEPAGE="http://opensource.conformal.com/wiki/spectrwm"
+DOWNLOADS="http://opensource.conformal.com/snapshots/spectrwm/${PNV}.tgz"
+
+LICENCES="ISC"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        x11-dri/mesa[X]
+        x11-utils/xcb-util-keysyms
+        x11-utils/xcb-util-wm
+    recommendation:
+        x11-apps/slock [[
+            description = [ a lightweight alternative to xlockmore ]
+        ]]
+        x11-misc/dmenu [[ 
+            description = [ the default application launcher with bar integration ]
+        ]]
+"
+
+DEFAULT_SRC_COMPILE_PARAMS=( PREFIX=/usr LIBDIR=/usr/${LIBDIR} )
+DEFAULT_SRC_INSTALL_PARAMS=( PREFIX=/usr LIBDIR=/usr/${LIBDIR} )
+
+WORK="${WORK}/linux"
+
+src_install() {
+    default
+
+    # spectrwm used to be called scrotwm
+    dosym spectrwm /usr/bin/scrotwm
+}
+
