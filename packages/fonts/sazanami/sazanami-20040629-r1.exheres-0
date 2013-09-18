@@ -1,0 +1,27 @@
+# Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+MPNV="ttf-sazanami_20040629.orig"
+
+require xfont
+
+SUMMARY="Japanese TrueType fonts"
+HOMEPAGE="http://wiki.fdiary.net/font/?sazanami"
+DOWNLOADS="http://ftp.de.debian.org/debian/pool/main/t/ttf-sazanami/${MPNV}.tar.bz2"
+
+LICENCES="BSD-3"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+MYOPTIONS=""
+
+DEPENDENCIES=""
+
+src_install() {
+    insinto /usr/share/fonts/X11/${PN}/
+    doins "${WORK}"/*.ttf
+
+    emagicdocs
+
+    fix_fonts
+}
+
