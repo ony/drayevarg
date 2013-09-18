@@ -9,7 +9,7 @@ SUMMARY="Japanese TrueType fonts"
 HOMEPAGE="http://wiki.fdiary.net/font/?sazanami"
 DOWNLOADS="http://ftp.de.debian.org/debian/pool/main/t/ttf-sazanami/${MPNV}.tar.bz2"
 
-LICENCES="BSD-3"
+LICENCES="efont"
 SLOT="0"
 PLATFORMS="~amd64 ~x86"
 MYOPTIONS=""
@@ -19,8 +19,6 @@ DEPENDENCIES=""
 src_install() {
     insinto /usr/share/fonts/X11/${PN}/
     doins "${WORK}"/*.ttf
-
-    emagicdocs
 
     fix_fonts
 }
