@@ -1,0 +1,21 @@
+From 16c1c2df60735bf2ea3e9f5f1c6a3a1e0dd9f7f3 Mon Sep 17 00:00:00 2001
+From: Anselm R Garbe <anselm@garbe.us>
+Date: Fri, 02 Aug 2013 20:20:48 +0000
+Subject: fixed a silly bug, reported by several people, including Mark Edgar
+
+---
+diff --git a/util.c b/util.c
+index 26953d0..8afa58f 100644
+--- a/util.c
++++ b/util.c
+@@ -49,7 +49,7 @@ strlcpy(char *to, const char *from, int l) {
+ 
+ static char *
+ eat(char *s, int (*p)(int), int r) {
+-	while(s != '\0' && p(*s) == r)
++	while(*s != '\0' && p(*s) == r)
+ 		s++;
+ 	return s;
+ }
+--
+cgit v0.9.0.3-65-g4555
