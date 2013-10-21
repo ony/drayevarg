@@ -1,9 +1,9 @@
 # Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require xfont
-
 FONT="baekmuk"
+
+require xfont
 
 SUMMARY="Korean TrueType fonts"
 HOMEPAGE="http://kldp.net/projects/baekmuk"
