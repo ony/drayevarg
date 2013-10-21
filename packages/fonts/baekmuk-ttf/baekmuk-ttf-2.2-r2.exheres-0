@@ -3,6 +3,8 @@
 
 require xfont
 
+FONT="baekmuk"
+
 SUMMARY="Korean TrueType fonts"
 HOMEPAGE="http://kldp.net/projects/baekmuk"
 DOWNLOADS="http://kldp.net/frs/download.php/1429/${PNV}.tar.gz"
@@ -15,7 +17,7 @@ MYOPTIONS=""
 DEPENDENCIES=""
 
 src_install() {
-    insinto /usr/share/fonts/X11/${PN}/
+    insinto /usr/share/fonts/X11/${FONT}/
     doins "${WORK}"/ttf/*.ttf
 
     emagicdocs

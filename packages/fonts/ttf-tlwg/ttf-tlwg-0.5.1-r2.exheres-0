@@ -3,7 +3,7 @@
 
 require xfont
 
-FONT="ttf-tlwg"
+FONT="tlwg"
 
 SUMMARY="Thai TrueType fonts"
 HOMEPAGE="http://linux.thai.net"
@@ -17,7 +17,7 @@ MYOPTIONS=""
 DEPENDENCIES=""
 
 src_install() {
-    insinto /usr/share/fonts/X11/${PN}/
+    insinto /usr/share/fonts/X11/${FONT}/
     doins "${WORK}"/*.ttf
 
     if has_version 'media-libs/fontconfig[>=2.10.1]' ; then
