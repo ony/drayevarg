@@ -3,7 +3,7 @@
 
 require xorg
 
-SUMMARY="A tool to set X background or color"
+SUMMARY="Set X background or color"
 HOMEPAGE="http://manpages.ubuntu.com/manpages/dapper/man1/hsetroot.1.html"
 DOWNLOADS="http://thegraveyard.org/files/${PNV}.tar.gz"
 
