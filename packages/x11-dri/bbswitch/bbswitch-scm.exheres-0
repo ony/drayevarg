@@ -1,11 +1,11 @@
 # Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-# Last checked 24 Aug 2013
+# Last checked 30 Oct 2013
 
 require github [ user="Bumblebee-Project" ]
 
-SUMMARY="A kernel module to toggle the discrete graphics card on hybrid laptops, such as nVidia Optimus"
+SUMMARY="A kernel module to toggle the discrete graphics card on nVidia Optimus laptops"
 HOMEPAGE="http://github.com/Bumblebee-Project/bbswitch"
 DOWNLOADS=""
 
@@ -26,8 +26,10 @@ src_compile() {
 }
 
 src_install() {
+    emagicdocs
+
     insinto /usr/src/${PN}
-    doins "${WORK}"/*
+    doins "${WORK}"/{Make*,*.c}
 }
 
 pkg_postinst() {
