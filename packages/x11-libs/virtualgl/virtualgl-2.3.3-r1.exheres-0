@@ -58,9 +58,8 @@ install_one_multibuild() {
 src_install() {
     easy-multibuild_src_install
 
-    # Collides with x11-dri/mesa-demos and complicates multibuild
+    # Collides with x11-dri/mesa-demos
     edo rm "${IMAGE}"/usr/bin/glxinfo
-    edo rm "${IMAGE}"/usr/bin/glxspheres*
 
     # vglrun needs to find libturbojpeg.so
     hereenvd 60virtualgl <<EOF
