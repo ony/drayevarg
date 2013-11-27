@@ -5,7 +5,7 @@ WORK="${WORKBASE}"
 
 require sourceforge [ pn="${PN} v2005" project="vietunicode" suffix=zip ] xfont
 
-SUMMARY="HAN NOM A and B fonts"
+SUMMARY="HAN NOM A and B TrueType fonts"
 HOMEPAGE="http://vietunicode.sourceforge.net/fonts/fonts_hannom.html"
 
 LICENCES="unspecified"
