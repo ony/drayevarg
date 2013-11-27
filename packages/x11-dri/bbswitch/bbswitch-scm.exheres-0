@@ -2,10 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 
 # Last checked 30 Oct 2013
+# See tuxoko/bbswitch for 3.13-rc1 build failure
 
 require github [ user="Bumblebee-Project" ]
 
-SUMMARY="A kernel module to toggle the discrete graphics card on nVidia Optimus laptops"
+SUMMARY="Kernel module to toggle the discrete graphics card on nVidia Optimus laptops"
 HOMEPAGE="http://github.com/Bumblebee-Project/bbswitch"
 DOWNLOADS=""
 
