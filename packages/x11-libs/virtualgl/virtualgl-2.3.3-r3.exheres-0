@@ -61,7 +61,7 @@ src_install() {
     # Collides with x11-dri/mesa-demos
     edo rm "${IMAGE}"/usr/bin/glxinfo
 
-    if [ -a "${IMAGE}"/usr/bin/glxspheres ] ; then
+    if [ -x "${IMAGE}"/usr/bin/glxspheres ] ; then
         mv "${IMAGE}"/usr/bin/glxspheres "${IMAGE}"/usr/bin/glxspheres32
     fi
 
