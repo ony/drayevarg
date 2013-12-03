@@ -8,7 +8,7 @@ require sourceforge [ pn="${PN} v2005" project="vietunicode" suffix=zip ] xfont
 SUMMARY="HAN NOM A and B TrueType fonts"
 HOMEPAGE="http://vietunicode.sourceforge.net/fonts/fonts_hannom.html"
 
-LICENCES="unspecified"
+LICENCES="freedist"
 SLOT="0"
 PLATFORMS="~amd64 ~x86"
 MYOPTIONS=""
