@@ -1,8 +1,7 @@
 # Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-# Last checked 26 Nov 2013
-# See http://github.com/Bumblebee-Project/bbswitch/pull/77 re: 3.13-rc1 build failure
+# Last checked 05 Dec 2013
 
 require github [ user="Bumblebee-Project" ]
 
