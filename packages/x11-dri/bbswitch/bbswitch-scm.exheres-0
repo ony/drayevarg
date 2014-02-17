@@ -1,7 +1,7 @@
 # Copyright 2013 Tod Jackson <tod.jackson@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-# Last checked 05 Dec 2013
+# Last checked 17 Feb 2014
 
 require github [ user="Bumblebee-Project" ]
 
@@ -28,7 +28,7 @@ src_compile() {
 src_install() {
     emagicdocs
 
-    insinto /usr/src/${PN}
+    insinto /usr/src/${PN}/
     doins "${WORK}"/{Make*,*.c}
 }
 
