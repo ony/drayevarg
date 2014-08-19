@@ -20,6 +20,6 @@ DEPENDENCIES="
 DEFAULT_SRC_CONFIGURE_PARAMS=( --hates=docdir )
 
 src_configure() {
-    export LDFLAGS+="$(pkg-config --libs x11)"
+    edo export LDFLAGS+="$(pkg-config --libs x11)"
     default
 }
