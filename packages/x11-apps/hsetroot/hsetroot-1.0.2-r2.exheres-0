@@ -5,7 +5,7 @@ require xorg
 
 SUMMARY="Set X background or color"
 HOMEPAGE="http://manpages.ubuntu.com/manpages/dapper/man1/hsetroot.1.html"
-DOWNLOADS="http://thegraveyard.org/files/${PNV}.tar.gz"
+DOWNLOADS="ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/${PNV}.tar.gz"
 
 LICENCES="GPL-2"
 SLOT="0"
@@ -19,3 +19,7 @@ DEPENDENCIES="
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( --hates=docdir )
 
+src_configure() {
+    export LDFLAGS+="$(pkg-config --libs x11)"
+    default
+}
