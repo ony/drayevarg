@@ -25,7 +25,7 @@ MYOPTIONS="
 
 DEPENDENCIES="
     build+run:
-        openssl? ( dev-libs/openssl[multibuild_c:*(-)?] )
+        openssl? ( virtual/libssl[multibuild_c:*(-)?] )
         media-libs/libjpeg-turbo[multibuild_c:*(-)?]
         x11-dri/glu[multibuild_c:*(-)?]
         x11-libs/libXext[multibuild_c:*(-)?]
